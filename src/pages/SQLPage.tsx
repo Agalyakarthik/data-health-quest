@@ -4,18 +4,12 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/components/ui/input";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Database, Download, BookOpen, ExternalLink, Clock, Mail } from "lucide-react";
+import { Database, Download, BookOpen, ExternalLink, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
 import healthcareLogo from "@/assets/healthcare-logo.png";
 
 const SQLPage = () => {
-  const [email, setEmail] = useState("");
   const [query, setQuery] = useState("");
-
-  const handleEmailSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log("Email submitted:", email);
-  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -111,36 +105,6 @@ const SQLPage = () => {
 
           {/* Right Column - Sidebar */}
           <div className="space-y-6">
-            {/* Daily Delivery Card */}
-            <Card className="border-healthcare-primary/20 shadow-card">
-              <CardContent className="p-6">
-                <div className="flex items-center gap-2 mb-4">
-                  <Mail className="w-5 h-5 text-healthcare-primary" />
-                  <h3 className="text-xl font-bold text-gray-900">
-                    Daily Delivery
-                  </h3>
-                </div>
-                <p className="text-sm text-gray-600 mb-4">
-                  Get the query at 9 AM and the answer at 8 PM delivered to your inbox!
-                </p>
-                <form onSubmit={handleEmailSubmit} className="space-y-3">
-                  <Input
-                    type="email"
-                    placeholder="your.email@hospital.com"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    className="bg-white border-gray-300 text-gray-900 placeholder:text-gray-500"
-                  />
-                  <Button 
-                    type="submit"
-                    className="w-full bg-healthcare-primary hover:bg-healthcare-accent text-white"
-                  >
-                    Start My Daily Learning
-                  </Button>
-                </form>
-              </CardContent>
-            </Card>
-
             {/* Clinical Dataset Card */}
             <Card className="border-healthcare-primary/20 shadow-card">
               <CardContent className="p-6">
@@ -174,6 +138,49 @@ const SQLPage = () => {
                   >
                     <ExternalLink className="w-4 h-4 mr-2" />
                     PhysioNet Details
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* PostgreSQL Reference Card */}
+            <Card className="border-healthcare-primary/20 shadow-card">
+              <CardContent className="p-6">
+                <div className="flex items-center gap-2 mb-4">
+                  <BookOpen className="w-5 h-5 text-healthcare-primary" />
+                  <h3 className="text-xl font-bold text-gray-900">
+                    PostgreSQL Reference
+                  </h3>
+                </div>
+                <p className="text-sm text-gray-600 mb-4">
+                  Access quick guides and resources for PostgreSQL syntax functions and optimization.
+                </p>
+                <div className="space-y-2">
+                  <Button 
+                    className="w-full bg-healthcare-primary hover:bg-healthcare-accent text-white"
+                  >
+                    <Download className="w-4 h-4 mr-2" />
+                    Download Syntax Guide
+                  </Button>
+                  <Button 
+                    className="w-full bg-healthcare-primary hover:bg-healthcare-accent text-white"
+                  >
+                    <Download className="w-4 h-4 mr-2" />
+                    Download Optimization Tips
+                  </Button>
+                  <Button 
+                    variant="outline" 
+                    className="w-full border-gray-300 text-gray-700 hover:bg-gray-50"
+                  >
+                    <BookOpen className="w-4 h-4 mr-2" />
+                    Setup Guide
+                  </Button>
+                  <Button 
+                    variant="outline" 
+                    className="w-full border-gray-300 text-gray-700 hover:bg-gray-50"
+                  >
+                    <ExternalLink className="w-4 h-4 mr-2" />
+                    Community Details
                   </Button>
                 </div>
               </CardContent>
