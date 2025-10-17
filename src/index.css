@@ -70,6 +70,16 @@ All colors MUST be HSL.
     
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* SQL Page Theme - Dark Blue/Purple */
+    --sql-bg-start: 222 47% 11%;           /* Dark blue #0F172A */
+    --sql-bg-end: 263 40% 15%;             /* Dark purple #1E1B4B */
+    --sql-card-bg: 220 26% 14%;            /* Dark card background #1E293B */
+    --sql-border: 217 33% 24%;             /* Card border #334155 */
+    --sql-accent-start: 217 91% 60%;       /* Light blue #3B82F6 */
+    --sql-accent-end: 271 76% 53%;         /* Purple #A855F7 */
+    --sql-text-primary: 210 40% 98%;       /* Light text #F8FAFC */
+    --sql-text-muted: 215 20% 65%;         /* Muted text #94A3B8 */
 
     --radius: 0.5rem;
 

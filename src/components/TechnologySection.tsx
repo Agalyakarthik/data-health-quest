@@ -1,7 +1,10 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Database, Code, BarChart3 } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const TechnologySection = () => {
+  const navigate = useNavigate();
+  
   const technologies = [
     {
       icon: Database,
@@ -39,7 +42,11 @@ const TechnologySection = () => {
           {technologies.map((tech, index) => {
             const IconComponent = tech.icon;
             return (
-              <Card key={index} className="group hover:shadow-elegant transition-all duration-300 hover:-translate-y-1 cursor-pointer">
+              <Card 
+                key={index} 
+                className="group hover:shadow-elegant transition-all duration-300 hover:-translate-y-1 cursor-pointer"
+                onClick={() => tech.title === "SQL" && navigate("/sql")}
+              >
                 <CardContent className="p-8 text-center">
                   <div className="mb-6">
                     <div className="inline-flex items-center justify-center w-20 h-20 bg-healthcare-light rounded-2xl mb-4">
